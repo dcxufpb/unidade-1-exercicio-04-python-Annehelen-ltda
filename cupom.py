@@ -13,4 +13,27 @@ inscricao_estadual = "244.898.500.113"
 
 def dados_loja():
     # Implemente aqui
-    return "" 
+    global numero
+    if (nome_loja == ""):
+        raise Exception("O campo nome da loja é obrigatório")
+    if (logradouro == ""):
+        raise Exception("O campo logradouro do endereço é obrigatório")
+    if (numero == 0):
+        numero = ("s/n")
+    if (municipio == ""):
+        raise Exception("O campo município do endereço é obrigatório")
+    if (estado == ""):
+        raise Exception("O campo estado do endereço é obrigatório")
+    if (cnpj == ""):
+        raise Exception("O campo CNPJ da loja é obrigatório")
+    if (inscricao_estadual == ""):
+        raise Exception("O campo inscrição estadual da loja é obrigatório")
+    
+    return f'''{nome_loja}
+{logradouro}, {numero} {complemento}
+{bairro} - {municipio} - {estado}
+CEP:{cep} Tel {telefone}
+{observacao}
+CNPJ: {cnpj}
+IE: {inscricao_estadual}
+'''
